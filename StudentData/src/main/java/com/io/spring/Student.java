@@ -7,20 +7,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Student {
 	@Id
 	
+	private int id;
 	private String age;
 	private String name;
-	private String id;
 	private String phoneNo;
 	
-	public Student(String age, String name, String id, String phoneNo) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.id = id;
-		this.phoneNo = phoneNo;
+	public int getId() {
+		return id;
 	}
-
-	
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getAge() {
 		return age;
 	}
@@ -33,18 +30,25 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getPhoneNo() {
 		return phoneNo;
 	}
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
+	
+	
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", age=" + age + ", name=" + name + ", phoneNo=" + phoneNo + "]";
+	}
+	public Student(int id, String age, String name, String phoneNo) {
+		super();
+		this.id = id;
+		this.age = age;
+		this.name = name;
+		this.phoneNo = phoneNo;
+	}
 
-
+	
 }
